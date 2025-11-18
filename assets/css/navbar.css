@@ -7,7 +7,16 @@
     /* background-color: blue; */
     padding-top: 20px;
     width: 100dvw;
+    z-index: 1000;
+    transition: 0.3s;
 }
+
+.navbar-container.scrolled {
+    padding-top: 10px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
 
 .navbar-container .nav-items {
     padding: 10px 10px;

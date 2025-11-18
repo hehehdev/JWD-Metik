@@ -1,9 +1,17 @@
 .hero-section {
-    max-width: 700px;
+    max-width: 1000px;
+    width: 100%;
 }
 
 .hero-section .field {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-section .text-content {
+    flex: 1;
 }
 
 .hero-section .content {
@@ -12,5 +20,26 @@
 
 .hero-section .bawah {
     margin-top: 40px;
-    text-align: center;
+    text-align: left;
+}
+
+.hero-section .gambar {
+    flex-shrink: 0;
+}
+
+.hero-section .gambar img {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .hero-section .field {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-section .bawah {
+        text-align: center;
+    }
 }

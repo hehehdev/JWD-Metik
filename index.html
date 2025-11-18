@@ -8,64 +8,82 @@
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000');
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
     <link rel="stylesheet" href="assets/css/root.css">
     <link rel="stylesheet" href="assets/css/global.css">
-
     <link rel="stylesheet" href="assets/css/navbar.css">
-    
+
     <link rel="stylesheet" href="assets/css/container/main-container.css">
     <link rel="stylesheet" href="assets/css/section/hero-section.css">
-    <link rel="stylesheet" href="assets/css//section/project-section.css">
-    <link rel="stylesheet" href="assets/css//section/contact-section.css">
+    <link rel="stylesheet" href="assets/css/section/project-section.css">
+    <link rel="stylesheet" href="assets/css/section/contact-section.css">
 
     <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
     <div class="navbar-container">
         <div class="nav-items">
             <div class="nav-item">
-                <a href="/" class="active">Home</a>
+                <a href="#home" class="nav-link active">Home</a>
             </div>
             <div class="nav-item">
-                <a href="/">Project</a>
+                <a href="#project" class="nav-link">Project</a>
             </div>
             <div class="nav-item">
-                <a href="/">Contact</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
         </div>
     </div>
 
     <div class="main-container">
-        <div class="hero-section" >
+        <div class="hero-section" id="home">
             <div class="field">
                 <div class="">
                     <div class="header">
-                        <p>Halo, namaku</p>
-                        <h1>Muhamad Aufa Al-Baihaqi</h1>
+                        <p>Hi, my name is</p>
+                        <h1 id="typing-text"></h1>
                     </div>
                     <div class="content">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente recusandae omnis hic explicabo? Quam itaque provident repellat maxime sunt laboriosam cum, ducimus sapiente deleniti beatae nemo tenetur nihil consequatur assumenda?</p>
+                        <p>I'm a Junior Web Developer passionate about creating functional and user-friendly websites. With experience in HTML, CSS, and JavaScript, I enjoy turning ideas into reality through code. Currently, I'm continuously learning and developing my skills to create better web solutions.</p>
                     </div>
                 </div>
                 <div class="gambar">
-                    <img src="assets/img/wangja.jpg" alt="">
+                    <img src="assets/img/wangja.jpg" alt="wangja" style="max-width: 100%; border-radius: 10px;">
                 </div>
-
             </div>
             <div class="bawah">
-                <button>Selengkapnya</button>
+                <button onclick="scrollToSection('project')">See more</button>
             </div>
         </div>
 
-        <div class="project-section">
+        <div class="project-section" id="project">
             <div class="header">
                 <p>Project</p>
                 <h1>Featured Project</h1>
             </div>
             <div class="content">
-                <div class="item"></div>
-                <div class="item"></div>
-                <div class="item"></div>
+                <div class="item">
+                    <img src="assets/img/simael.jpeg" alt="simael">
+                    <div class="project-info">
+                        <div class="project-title">SIMAEL</div>
+                        <div class="project-description">Sistem Manajemen Pintar PKL - Aplikasi untuk manajemen dan monitoring kegiatan PKL(In Progress)</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="project-placeholder">?</div>
+                        <div class="project-info">
+                            <div class="project-title">Project Saya</div>
+                            <div class="project-description">Deskripsi project saya</div>
+                        </div>
+                    </div>
+                <div class="item">
+                    <div class="project-placeholder">?</div>
+                        <div class="project-info">
+                            <div class="project-title">Project Saya</div>
+                            <div class="project-description">Deskripsi project saya</div>
+                        </div>
+                    </div>
             </div>
         </div>
 
@@ -76,7 +94,7 @@
             </div>
             <div class="contact-container">
                 <div class="contact-info">
-                    <p>I'm Alwasy open to discuss exciting projects and new opportunities.</p>
+                    <p>I'm Always open to discuss exciting projects and new opportunities.</p>
                     
                     <div class="info-item">
                         <i class="fa-solid fa-envelope icon"></i>
@@ -94,16 +112,17 @@
                     </div>
 
                     <div class="social-icons">
-                        <a href="/"><i class="fa-brands fa-github"></i></a>
-                        <a href="/"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" onclick="return false;"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" onclick="return false;"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" onclick="return false;"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
 
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" required></textarea>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-message" id="formMessage"></div>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
                     <button type="submit">Send Message</button>
                 </form>
             </div>
@@ -113,19 +132,20 @@
     <footer class="footer">
         <h2>Faa</h2>
         <div class="footer-links">
-            <a href="/">Home</a>
-            <a href="/">Project</a>
-            <a href="/">Contact</a>
+            <a href="#home" onclick="scrollToSection('home'); return false;">Home</a>
+            <a href="#project" onclick="scrollToSection('project'); return false;">Project</a>
+            <a href="#contact" onclick="scrollToSection('contact'); return false;">Contact</a>
         </div>
 
         <div class="footer-social">
-            <a href="/"><i class="fa-brands fa-github"></i></a>
-            <a href="/"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" onclick="return false;"><i class="fa-brands fa-github"></i></a>
+            <a href="#" onclick="return false;"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" onclick="return false;"><i class="fa-brands fa-instagram"></i></a>
         </div>
 
         <p class="copyright">© 2025 Faa. All Rights Reserved.</p>
     </footer>
 
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
